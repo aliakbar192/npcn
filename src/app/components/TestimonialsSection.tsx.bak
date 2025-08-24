@@ -1,0 +1,79 @@
+'use client';
+
+import React, { useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
+import TestimonialCard from './TestimonialCard';
+import { testimonials } from '@/data/cableData';
+
+const TestimonialsSection = () => {
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  // Auto-rotate testimonials with shorter interval
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveIndex((prev) => (prev + 1) % testimonials.length);
+    }, 4000); // Faster rotation (4 seconds)
+    return () => clearInterval(interval);
+  }, []);
+
+  return (
+    <section className="py-10 md:py-16 relative mb-0">
+      {/* Background decorations */}
+      <div className="absolute top-0 left-0 w-72 h-72 bg-primary/5 rounded-full -translate-x-1/2 -translate-y-1/2" />
+      <div className="absolute bottom-0 right-0 w-96 h-96 bg-secondary/5 rounded-full translate-x-1/3 translate-y-1/3" />
+
+      <div className="container mx-auto px-4 md:px-6">
+        <motion.div 
+          className="text-center max-w-3xl mx-auto mb-10"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+        >
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+            What Our Customers Say
+          </h2>
+          <p className="text-xl text-gray-600 dark:text-gray-400">
+            Don't just take our word for it. Hear from the people who experience our service every day.
+          </p>
+        </motion.div>
+
+        {/* Testimonials carousel - simplified structure */}
+        <div className="max-w-3xl mx-auto">
+          {/* Card container with fixed height - reduced height */}
+          <div className="relative h-[350px] md:h-[250px] mb-2">
+            {testimonials.map((testimonial, index) => (
+              <TestimonialCard
+                key={testimonial.id}
+                name={testimonial.name}
+                role={testimonial.role}
+                testimonial={testimonial.testimonial}
+                rating={testimonial.rating}
+                image={`/dummy-avatar-${index + 1}.png`}
+                isActive={index === activeIndex}
+              />
+            ))}
+          </div>
+
+          {/* Only indicator dots, no navigation arrows */}
+          <div className="flex justify-center mb-0">
+            <div className="flex justify-center space-x-2 mb-2">
+              {testimonials.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => setActiveIndex(index)}
+                  className={`w-2 h-2 rounded-full transition-all ${
+                    index === activeIndex
+                      ? 'bg-primary w-6'
+                      : 'bg-gray-300 dark:bg-gray-700'
+                  }`}
+                  aria-label={`Go to testimonial ${index + 1}`}
+                />
+              ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default TestimonialsSection;
