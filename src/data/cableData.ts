@@ -62,6 +62,115 @@ export const internetPackages = [
   }
 ];
 
+// New plans for the plans page
+export const homePlans = [
+  {
+    id: 'home-basic',
+    name: 'Basic Home',
+    price: 2500,
+    speed: '20 Mbps',
+    features: [
+      'Download speeds up to 20 Mbps',
+      'Upload speeds up to 5 Mbps',
+      'Unlimited data usage',
+      'Standard Wi-Fi router',
+      'Basic technical support',
+      'No contract required'
+    ],
+    isPopular: false
+  },
+  {
+    id: 'home-standard',
+    name: 'Standard Home',
+    price: 3500,
+    speed: '50 Mbps',
+    features: [
+      'Download speeds up to 50 Mbps',
+      'Upload speeds up to 15 Mbps',
+      'Unlimited data usage',
+      'Advanced Wi-Fi router',
+      'Priority customer support',
+      'Free installation',
+      'No contract required'
+    ],
+    isPopular: true
+  },
+  {
+    id: 'home-premium',
+    name: 'Premium Home',
+    price: 5000,
+    speed: '100 Mbps',
+    features: [
+      'Download speeds up to 100 Mbps',
+      'Upload speeds up to 25 Mbps',
+      'Unlimited data usage',
+      'High-performance Wi-Fi router',
+      '24/7 Premium support',
+      'Free installation',
+      'Smart home device setup assistance',
+      'No contract required'
+    ],
+    isPopular: false
+  }
+];
+
+export const businessPlans = [
+  {
+    id: 'business-starter',
+    name: 'Business Starter',
+    price: 6000,
+    speed: '100 Mbps',
+    features: [
+      'Download speeds up to 100 Mbps',
+      'Upload speeds up to 50 Mbps',
+      'Unlimited data usage',
+      'Static IP address',
+      'Business-grade router',
+      'Standard SLA with 99.5% uptime',
+      'Business hours technical support',
+      'No contract required'
+    ],
+    isPopular: false
+  },
+  {
+    id: 'business-professional',
+    name: 'Business Pro',
+    price: 10000,
+    speed: '250 Mbps',
+    features: [
+      'Download speeds up to 250 Mbps',
+      'Upload speeds up to 100 Mbps',
+      'Unlimited data usage',
+      'Multiple static IP addresses',
+      'Advanced business router and firewall',
+      'Premium SLA with 99.9% uptime',
+      '24/7 Priority support',
+      'Free installation and setup',
+      'No contract required'
+    ],
+    isPopular: true
+  },
+  {
+    id: 'business-enterprise',
+    name: 'Enterprise Solution',
+    price: 15000,
+    speed: '500 Mbps',
+    features: [
+      'Download speeds up to 500 Mbps',
+      'Upload speeds up to 250 Mbps',
+      'Unlimited data usage',
+      'Dedicated IP block',
+      'Enterprise-grade networking equipment',
+      'Premium SLA with 99.99% uptime',
+      '24/7 Dedicated support team',
+      'Network monitoring and management',
+      'Free professional installation',
+      'No contract required'
+    ],
+    isPopular: false
+  }
+];
+
 export const cablePackages = [
   {
     id: 'basic-cable',
@@ -170,18 +279,18 @@ export const services = [
     link: '/services/internet'
   },
   {
-    id: 'cable',
-    title: 'Premium Cable TV',
-    description: 'Crystal-clear HD channels with the best entertainment, sports, news, and premium networks.',
-    icon: 'cable',
-    link: '/services/cable'
-  },
-  {
     id: 'support',
     title: '24/7 Customer Support',
     description: 'Round-the-clock technical assistance and customer service when you need it most.',
     icon: 'support',
     link: '/support'
+  },
+  {
+    id: 'smart-home',
+    title: 'Smart Home Connectivity',
+    description: 'Connect and control all your smart home devices with our reliable internet solutions.',
+    icon: 'cloud',
+    link: '/services/smart-home'
   },
   {
     id: 'business',
@@ -196,9 +305,9 @@ export const testimonials = [
   {
     id: 1,
     name: 'Sarah Johnson',
-    role: 'Premium Bundle Customer',
+    role: 'Premium Internet Customer',
     rating: 5,
-    testimonial: "Switching to RANA was the best decision we made. The internet speed is consistently fast, and the TV picture quality is amazing. Their customer support team is always helpful whenever we have questions.",
+    testimonial: "Switching to RANA was the best decision we made. The internet speed is consistently fast and reliable. Their customer support team is always helpful whenever we have questions.",
     image: '/images/testimonials/sarah.jpg'
   },
   {
@@ -289,10 +398,6 @@ export const faqs = [
   {
     question: 'Is there a data cap on internet usage?',
     answer: 'No, all our internet plans come with truly unlimited data. Stream, download, and browse as much as you want without worrying about overage charges.'
-  },
-  {
-    question: 'Can I bundle services for a discount?',
-    answer: 'Yes! We offer bundle packages that combine internet and TV services at discounted rates. Depending on the bundle, you can save anywhere from $10 to $40 per month compared to purchasing services separately.'
   },
   {
     question: 'How can I check if service is available in my area?',

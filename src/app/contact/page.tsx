@@ -1,10 +1,10 @@
 'use client';
 
 import React from 'react';
-import Header from '../../src/components/Header';
-import MainFooter from '../../src/components/MainFooter';
-import PageTransitionWrapper from '../../src/components/PageTransitionWrapper';
-import FadeInSection from '../../src/components/FadeInSection';
+import PageTransitionWrapper from '../components/PageTransitionWrapper';
+import Header from '../components/Header';
+import MainFooter from '../components/MainFooter';
+import FadeInSection from '../components/FadeInSection';
 
 export default function ContactPage() {
   return (

@@ -5,8 +5,8 @@ import React from 'react';
 import { coverageAreas } from '../../data/siteData';
 import PageTransitionWrapper from '../components/PageTransitionWrapper';
 import Header from '../components/Header';
-import FadeInSection from '../components/FadeInSection';
 import MainFooter from '../components/MainFooter';
+import FadeInSection from '../components/FadeInSection';
 
 export default function CoveragePage() {
   return (

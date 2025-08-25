@@ -12,8 +12,7 @@ const MainFooter = () => {
       title: 'Services',
       links: [
         { name: 'Internet', href: '/services/internet' },
-        { name: 'Cable TV', href: '/services/cable' },
-        { name: 'Packages', href: '/packages' },
+        { name: 'Packages', href: '/plans' },
         { name: 'Business Solutions', href: '/business' }
       ]
     },
@@ -72,7 +71,7 @@ const MainFooter = () => {
             </div>
             
             <p className="text-white/70 mb-6 max-w-sm">
-              NPCN provides high-speed internet and innovative cable solutions to homes and businesses. We're committed to connecting you to the digital world with reliability and excellence.
+              NPCN provides high-speed internet solutions to homes and businesses. We're committed to connecting you to the digital world with reliability and excellence.
             </p>
             
             <div className="space-y-3">

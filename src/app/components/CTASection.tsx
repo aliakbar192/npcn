@@ -64,7 +64,7 @@ const CTASection = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.3 }}
           >
-            Join thousands of satisfied customers who trust us for their internet and cable needs. Get started today for special introductory pricing!
+            Join thousands of satisfied customers who trust us for their internet needs. Get started today for special introductory pricing!
           </motion.p>
           
           <motion.div
