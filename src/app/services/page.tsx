@@ -1,44 +1,358 @@
 'use client';
 
 import React from 'react';
-
-import { services } from '../../data/siteData';
+import { motion } from 'framer-motion';
+import Image from 'next/image';
 import PageTransitionWrapper from '../components/PageTransitionWrapper';
 import Header from '../components/Header';
 import AnimatedWrapper from '../components/AnimatedWrapper';
 import FadeInSection from '../components/FadeInSection';
 import MainFooter from '../components/MainFooter';
-import ServiceCard from '../components/ServiceCard';
+// Import the simpler service card
+import SimpleServiceCard from '../components/SimpleServiceCard';
 
 export default function ServicesPage() {
+  // Directly use the services data in the component - focused only on home and business internet
+  const servicesData = [
+    {
+      id: 'service1',
+      title: 'Residential Fiber Internet',
+      description: 'Experience lightning-fast browsing with our fiber optic internet packages for homes. Speeds up to 1 Gbps with unlimited data.',
+      icon: 'cloud'
+    },
+    {
+      id: 'service2',
+      title: 'Business Internet',
+      description: 'Enterprise-grade connectivity solutions with dedicated bandwidth and 99.9% uptime guarantee for businesses of all sizes.',
+      icon: 'server'
+    },
+    {
+      id: 'service3',
+      title: 'Home Office Solutions',
+      description: 'Specialized internet packages designed for remote workers with priority traffic for video conferencing and VPN connections.',
+      icon: 'package'
+    },
+    {
+      id: 'service4',
+      title: 'Enterprise Solutions',
+      description: 'Custom connectivity infrastructure for large businesses with dedicated support, static IPs, and network management.',
+      icon: 'settings'
+    },
+    {
+      id: 'service5',
+      title: 'Whole-Home Wi-Fi',
+      description: 'Complete home coverage with our advanced mesh network systems. No more dead zones or dropped connections.',
+      icon: 'smartphone'
+    },
+    {
+      id: 'service6',
+      title: '24/7 Technical Support',
+      description: 'Round-the-clock technical support and professional installation services to ensure your connection is always running smoothly.',
+      icon: 'shield'
+    }
+  ];
+  
   return (
     <PageTransitionWrapper>
       <main className="min-h-screen">
         {/* Header */}
         <Header />
         
-        {/* Services Content */}
-        <section className="py-24 px-4">
+        {/* Hero Section */}
+        <section className="relative py-28 bg-gray-900 overflow-hidden">
+          <div className="absolute inset-0 z-0 opacity-20">
+            <Image
+              src="/images/internet-bg.jpg"
+              alt="Internet Services Background"
+              fill
+              className="object-cover"
+              priority
+            />
+          </div>
+          <div className="absolute inset-0 bg-gradient-to-r from-gray-900 via-gray-900/95 to-gray-900/80 z-0"></div>
+          <div className="container mx-auto px-4 relative z-10">
+            <AnimatedWrapper>
+              <div className="text-center max-w-3xl mx-auto">
+                <div className="inline-block p-3 rounded-full bg-green-500/20 mb-6">
+                  <svg className="w-8 h-8 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                  </svg>
+                </div>
+                <h1 className="text-4xl md:text-5xl font-bold mb-6 text-white">Premium Internet Services</h1>
+                <p className="text-xl text-gray-300 mb-8">
+                  Discover high-speed connectivity solutions designed for homes and businesses with 24/7 customer support.
+                </p>
+                <div className="flex flex-col sm:flex-row justify-center gap-4">
+                  <motion.a 
+                    href="/contact" 
+                    className="px-8 py-4 rounded-full bg-green-600 hover:bg-green-700 text-white font-bold shadow-lg hover:shadow-xl transition-all duration-300"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    Get Started
+                  </motion.a>
+                  <motion.a 
+                    href="/plans" 
+                    className="px-8 py-4 rounded-full bg-transparent border-2 border-green-500/30 text-white font-bold hover:bg-green-500/10 transition-all duration-300"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    View Plans
+                  </motion.a>
+                </div>
+              </div>
+            </AnimatedWrapper>
+          </div>
+        </section>
+        
+        {/* Main Services Section */}
+        <section className="py-24 px-4 bg-gray-900">
           <div className="container mx-auto">
             <AnimatedWrapper>
               <div className="text-center max-w-3xl mx-auto mb-16">
-                <h1 className="text-4xl md:text-5xl font-bold mb-6">Our Services</h1>
-                <p className="text-xl text-gray-600 dark:text-gray-400">
-                  Discover the range of services we offer to help your business thrive.
+                <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">Our Services</h2>
+                <p className="text-xl text-gray-400">
+                  We offer comprehensive internet solutions for your home and business needs.
                 </p>
               </div>
             </AnimatedWrapper>
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10 mt-12">
-              {services.map((service, index) => (
-                <FadeInSection key={service.id} delay={index * 0.1}>
-                  <ServiceCard 
+              {servicesData.map((service, index) => (
+                <div key={service.id} className="transform transition-all duration-300 hover:-translate-y-2">
+                  <SimpleServiceCard 
                     title={service.title} 
                     description={service.description} 
-                    icon={service.icon} 
+                    icon={service.icon}
                   />
-                </FadeInSection>
+                </div>
               ))}
+            </div>
+          </div>
+        </section>
+        
+        {/* Features Section */}
+        <section className="py-20 bg-gray-800">
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">Why Choose Our Internet Services</h2>
+              <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+                Experience unmatched internet performance with our cutting-edge network technology and customer-first approach.
+              </p>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+              {[
+                {
+                  icon: (
+                    <svg className="w-10 h-10 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                    </svg>
+                  ),
+                  title: "Fiber Optic Network",
+                  description: "State-of-the-art fiber optic infrastructure delivering consistent gigabit speeds with minimal latency."
+                },
+                {
+                  icon: (
+                    <svg className="w-10 h-10 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                    </svg>
+                  ),
+                  title: "Advanced Security",
+                  description: "Built-in network security with advanced firewall protection, anti-malware, and parental controls."
+                },
+                {
+                  icon: (
+                    <svg className="w-10 h-10 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                  ),
+                  title: "No Data Caps",
+                  description: "Truly unlimited data usage with no throttling, no matter how much you stream, game, or download."
+                },
+                {
+                  icon: (
+                    <svg className="w-10 h-10 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8.111 16.404a5.5 5.5 0 017.778 0M12 20h.01m-7.08-7.071c3.904-3.905 10.236-3.905 14.141 0M1.394 9.393c5.857-5.857 15.355-5.857 21.213 0" />
+                    </svg>
+                  ),
+                  title: "Smart Wi-Fi Technology",
+                  description: "Whole-home mesh Wi-Fi coverage with automatic band selection for optimal performance in every room."
+                }
+              ].map((feature, index) => (
+                <motion.div 
+                  key={index}
+                  className="bg-gray-900 rounded-xl p-6 text-center"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                >
+                  <div className="flex justify-center mb-4">
+                    {feature.icon}
+                  </div>
+                  <h3 className="text-xl font-bold mb-3 text-white">{feature.title}</h3>
+                  <p className="text-gray-400">{feature.description}</p>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+        
+        {/* Internet Speed Comparison */}
+        <section className="py-20 bg-gray-900 border-t border-gray-800">
+          <div className="container mx-auto px-4">
+            <div className="max-w-4xl mx-auto">
+              <div className="text-center mb-16">
+                <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">Experience Next-Level Internet</h2>
+                <p className="text-xl text-gray-400">
+                  Our high-speed internet packages are designed for today's digital lifestyle, whether you're streaming, gaming, or working from home.
+                </p>
+              </div>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div className="order-2 md:order-1">
+                  <h3 className="text-2xl font-bold mb-6 text-white">What You Can Do With Our Speed</h3>
+                  <ul className="space-y-4">
+                    {[
+                      {
+                        title: "4K/8K Video Streaming",
+                        description: "Stream ultra-high-definition content on multiple devices simultaneously without buffering."
+                      },
+                      {
+                        title: "Cloud Gaming & VR",
+                        description: "Experience lag-free cloud gaming and immersive virtual reality with minimal latency."
+                      },
+                      {
+                        title: "Smart Home Integration",
+                        description: "Connect and control all your smart home devices with reliable, responsive performance."
+                      },
+                      {
+                        title: "Remote Work & Video Conferencing",
+                        description: "Crystal-clear video calls and seamless remote work experience with symmetrical upload speeds."
+                      },
+                      {
+                        title: "Large File Transfers",
+                        description: "Download and upload massive files in seconds instead of minutes or hours."
+                      }
+                    ].map((item, index) => (
+                      <motion.li 
+                        key={index} 
+                        className="bg-gray-800 rounded-lg p-4"
+                        initial={{ opacity: 0, x: -20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.4, delay: index * 0.1 }}
+                        viewport={{ once: true }}
+                      >
+                        <h4 className="font-bold text-green-400 mb-1">{item.title}</h4>
+                        <p className="text-gray-400">{item.description}</p>
+                      </motion.li>
+                    ))}
+                  </ul>
+                </div>
+                
+                <div className="order-1 md:order-2">
+                  <div className="relative p-1 bg-gradient-to-br from-green-500 to-blue-600 rounded-xl">
+                    <div className="bg-gray-900 rounded-lg p-6">
+                      <h3 className="text-2xl font-bold mb-6 text-center text-white">Speed Comparison</h3>
+                      
+                      {[
+                        { name: "Basic DSL", speed: "25 Mbps", width: "15%", color: "bg-gray-500" },
+                        { name: "Cable Internet", speed: "100 Mbps", width: "40%", color: "bg-blue-500" },
+                        { name: "Our Fiber", speed: "1 Gbps", width: "90%", color: "bg-green-500" },
+                        { name: "Our Premium", speed: "2 Gbps", width: "100%", color: "bg-gradient-to-r from-green-400 to-blue-500" }
+                      ].map((tier, index) => (
+                        <div key={index} className="mb-6">
+                          <div className="flex justify-between mb-2">
+                            <span className="text-white font-medium">{tier.name}</span>
+                            <span className="text-green-400 font-bold">{tier.speed}</span>
+                          </div>
+                          <div className="w-full bg-gray-800 rounded-full h-4">
+                            <motion.div 
+                              className={`h-4 rounded-full ${tier.color}`}
+                              initial={{ width: "0%" }}
+                              whileInView={{ width: tier.width }}
+                              transition={{ duration: 1, delay: 0.2 + (index * 0.1) }}
+                              viewport={{ once: true }}
+                            />
+                          </div>
+                        </div>
+                      ))}
+                      
+                      <div className="text-center mt-8">
+                        <motion.a
+                          href="/plans"
+                          className="inline-flex items-center px-6 py-3 rounded-lg bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white font-medium transition-all duration-300"
+                          whileHover={{ scale: 1.05 }}
+                          whileTap={{ scale: 0.95 }}
+                        >
+                          View Internet Plans
+                          <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path>
+                          </svg>
+                        </motion.a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        
+        {/* Coverage Map Section */}
+        <section className="py-20 bg-gray-900">
+          <div className="container mx-auto px-4">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <div>
+                <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">Service Coverage Area</h2>
+                <p className="text-xl text-gray-400 mb-8">
+                  We're continuously expanding our network to bring high-speed internet and premium cable services to more communities.
+                </p>
+                <ul className="space-y-4 mb-8">
+                  {['Metropolitan Areas', 'Suburban Communities', 'Rural Connections', 'Business Districts'].map((area, index) => (
+                    <li key={index} className="flex items-center">
+                      <svg className="w-5 h-5 text-green-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
+                      </svg>
+                      <span className="text-gray-300">{area}</span>
+                    </li>
+                  ))}
+                </ul>
+                <motion.a 
+                  href="/coverage" 
+                  className="inline-flex items-center px-6 py-3 rounded-lg bg-green-600 hover:bg-green-700 text-white font-medium transition-colors duration-300"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  Check Availability
+                  <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path>
+                  </svg>
+                </motion.a>
+              </div>
+              <div className="relative h-96 rounded-xl overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-tr from-green-900/20 via-transparent to-blue-900/20 z-10 rounded-xl"></div>
+                <div className="absolute inset-0 p-8 flex items-center justify-center z-20">
+                  <Image
+                    src="/images/internet-bg.jpg"
+                    alt="Coverage Map"
+                    fill
+                    className="object-cover rounded-xl"
+                  />
+                  <div className="absolute inset-0 bg-gray-900/60 rounded-xl"></div>
+                  <div className="relative z-10 text-center">
+                    <div className="inline-block p-3 rounded-full bg-green-500/20 mb-4">
+                      <svg className="w-8 h-8 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                      </svg>
+                    </div>
+                    <h3 className="text-xl font-bold mb-2 text-white">Interactive Coverage Map</h3>
+                    <p className="text-gray-300 mb-6">Click to check if service is available in your area</p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </section>
