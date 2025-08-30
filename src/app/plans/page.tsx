@@ -1,9 +1,8 @@
 'use client';
 
 import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-
-import { homePlans, businessPlans } from '@/data/cableData';
+import { motion } from 'framer-motion';
+import { homePlans, businessPlans } from '../../data/plansData';
 import PageTransitionWrapper from '../components/PageTransitionWrapper';
 import AnimatedWrapper from '../components/AnimatedWrapper';
 import PlanTypeToggle from '../components/PlanTypeToggle';
@@ -38,13 +37,6 @@ export default function PlansPage() {
     ? homePlans || [] 
     : businessPlans || [];
 
-  // Define simple animation for the hero section
-  const fadeInUp = {
-    initial: { opacity: 0, y: 20 },
-    animate: { opacity: 1, y: 0 },
-    transition: { duration: 0.8 }
-  };
-
   // Get the appropriate icon based on the plan type
   const icon = planType === 'Home' ? (
     <FiHome className="w-12 h-12 mb-4 text-[#009245]" />
@@ -62,7 +54,7 @@ export default function PlansPage() {
 
   return (
     <PageTransitionWrapper>
-      <main className="min-h-screen">
+      <main className="min-h-screen bg-gray-900">
         {/* Header */}
         <Header />
         
@@ -145,7 +137,7 @@ export default function PlansPage() {
                   animate={{ opacity: 1 }}
                   transition={{ duration: 0.3 }}
                 >
-                  {currentPlans.map((plan, index) => (
+                  {currentPlans.map((plan: any, index: number) => (
                     <motion.div
                       key={`${planType}-${plan.id}`}
                       className="h-full"

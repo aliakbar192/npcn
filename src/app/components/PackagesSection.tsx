@@ -3,11 +3,11 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import PackageCard from './PackageCard';
-import { internetPackages } from '../../data/cableData';
+import { homePlans } from '../../data/plansData';
 
 const PackagesSection = () => {
-  // Type definition for internet packages
-  type InternetPackage = {
+  // Type definition for home plans packages
+  type HomePlan = {
     id: string;
     name: string;
     price: number;
@@ -17,8 +17,13 @@ const PackagesSection = () => {
   };
 
   return (
-    <section className="py-16 md:py-24 bg-gradient-to-b from-white to-green-50 dark:from-gray-900 dark:to-gray-800">
-      <div className="container mx-auto px-4 md:px-6">
+    <section className="py-16 md:py-24 bg-gradient-to-br from-gray-900 via-gray-900 to-gray-800 shadow-xl shadow-gray-900/60 relative overflow-hidden">
+      {/* Gradient overlay effects */}
+      <div className="absolute inset-0 bg-gradient-to-r from-green-900/5 via-transparent to-blue-900/5 pointer-events-none"></div>
+      <div className="absolute top-0 left-1/4 w-96 h-96 bg-green-500/3 rounded-full blur-3xl pointer-events-none"></div>
+      <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-blue-500/3 rounded-full blur-3xl pointer-events-none"></div>
+      
+      <div className="container mx-auto px-4 md:px-6 relative z-10">
         <motion.div 
           className="text-center max-w-3xl mx-auto mb-16"
           initial={{ opacity: 0, y: 20 }}
@@ -26,10 +31,10 @@ const PackagesSection = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
             Our Internet Packages
           </h2>
-          <p className="text-xl text-gray-600 dark:text-gray-400">
+          <p className="text-xl text-gray-300">
             Choose from our range of high-speed internet packages for reliable connectivity.
           </p>
         </motion.div>
@@ -41,7 +46,7 @@ const PackagesSection = () => {
           transition={{ duration: 0.3 }}
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
         >
-          {internetPackages.map((pkg, index) => (
+          {homePlans.map((pkg: any, index: number) => (
             <PackageCard
               key={pkg.id}
               name={pkg.name}

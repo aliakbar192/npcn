@@ -33,10 +33,10 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({
       }}
       transition={{ duration: 0.5 }}
     >
-      <div className="bg-white/10 backdrop-blur-lg border border-white/10 rounded-2xl p-8 md:p-10 shadow-xl h-full">
+      <div className="bg-gray-800/90 backdrop-blur-lg border border-gray-700/50 rounded-2xl p-8 md:p-10 shadow-2xl h-full">
         <div className="flex flex-col md:flex-row gap-6 md:gap-10 items-center h-full">
           <div className="flex-shrink-0">
-            <div className="relative w-20 h-20 md:w-24 md:h-24 rounded-full overflow-hidden border-2 border-[#00b050]">
+            <div className="relative w-20 h-20 md:w-24 md:h-24 rounded-full overflow-hidden border-3 border-[#009245] shadow-lg shadow-[#009245]/30">
               {image ? (
                 <img 
                   src={image} 
@@ -50,29 +50,29 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({
                 />
               ) : null}
               {/* Colored initials as fallback */}
-              <div className="w-full h-full bg-gradient-to-br from-[#009245] to-[#00b050] flex items-center justify-center text-white text-2xl font-bold">
+              <div className="w-full h-full bg-gradient-to-br from-[#009245] to-[#00b050] flex items-center justify-center text-white text-2xl font-bold shadow-inner">
                 {name.charAt(0)}
               </div>
             </div>
           </div>
           
           <div className="flex-grow text-center md:text-left">
-            <div className="flex items-center justify-center md:justify-start mb-3">
+            <div className="flex items-center justify-center md:justify-start mb-4">
               {[...Array(5)].map((_, i) => (
                 <FiStar 
                   key={i} 
-                  className={`w-5 h-5 ${i < rating ? 'fill-[#00b050] text-[#00b050]' : 'text-gray-400'}`} 
+                  className={`w-5 h-5 ${i < rating ? 'fill-[#009245] text-[#009245]' : 'text-gray-600'}`} 
                 />
               ))}
             </div>
             
-            <blockquote className="text-white/90 text-lg mb-4 italic">
+            <blockquote className="text-gray-100 text-lg mb-6 italic leading-relaxed">
               "{testimonial}"
             </blockquote>
             
             <div>
               <h4 className="text-[#009245] font-bold text-lg">{name}</h4>
-              <p className="text-white/70 text-sm">{role}</p>
+              <p className="text-gray-400 text-sm">{role}</p>
             </div>
           </div>
         </div>

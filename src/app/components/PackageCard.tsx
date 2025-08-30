@@ -55,10 +55,10 @@ const PackageCard: React.FC<PackageCardProps> = ({
       )}
       <div 
         className={`
-          h-[550px] overflow-hidden rounded-2xl backdrop-blur-lg flex flex-col
+          h-[550px] overflow-hidden rounded-2xl backdrop-blur-lg flex flex-col shadow-2xl
           ${isPopular ? 
-            'bg-gradient-to-b from-white/15 to-white/5 border-2 border-[#009245]/50' : 
-            'bg-white/10 border border-white/10'
+            'bg-gray-800/95 border-2 border-[#009245]/60 shadow-[#009245]/20' : 
+            'bg-gray-800/90 border border-gray-700/50'
           }
         `}
       >
@@ -77,27 +77,27 @@ const PackageCard: React.FC<PackageCardProps> = ({
             </div>
             
             {speed && (
-              <div className="bg-white/10 rounded-lg p-2 mb-2 mt-2">
-                <div className="text-white/90 text-sm font-medium">Internet Speed</div>
+              <div className="bg-gray-700/60 rounded-lg p-2 mb-2 mt-2 border border-gray-600/50">
+                <div className="text-gray-300 text-sm font-medium">Internet Speed</div>
                 <div className="text-white text-lg font-bold">{speed}</div>
               </div>
             )}
             
             {channels && (
-              <div className="bg-white/10 rounded-lg p-2 mb-2">
-                <div className="text-white/90 text-sm font-medium">TV Channels</div>
+              <div className="bg-gray-700/60 rounded-lg p-2 mb-2 border border-gray-600/50">
+                <div className="text-gray-300 text-sm font-medium">TV Channels</div>
                 <div className="text-white text-lg font-bold">{channels}+ Channels</div>
               </div>
             )}
           </div>
           
           <div className="mb-4 h-[250px] overflow-y-auto custom-scrollbar">
-            <h4 className="text-white/90 font-medium mb-2">Package Includes:</h4>
+            <h4 className="text-gray-200 font-medium mb-2">Package Includes:</h4>
             <ul className="space-y-3">
               {features.slice(0, 7).map((feature, index) => (
                 <li key={index} className="flex items-start">
                   <FiCheck className="mt-1 mr-2 text-[#009245] flex-shrink-0" />
-                  <span className="text-white/80 text-sm">{feature}</span>
+                  <span className="text-gray-300 text-sm">{feature}</span>
                 </li>
               ))}
             </ul>

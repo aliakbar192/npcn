@@ -12,16 +12,16 @@ const FAQAccordionItem: React.FC<FAQItemProps> = ({ question, answer }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="border-b border-gray-200 dark:border-gray-700">
+    <div className="border-b border-gray-700">
       <button
         className="py-4 w-full flex justify-between items-center text-left"
         onClick={() => setIsOpen(!isOpen)}
       >
-        <span className="text-lg font-medium text-gray-900 dark:text-white">{question}</span>
+        <span className="text-lg font-medium text-white">{question}</span>
         <motion.span
           animate={{ rotate: isOpen ? 180 : 0 }}
           transition={{ duration: 0.3 }}
-          className="text-[#009245] dark:text-[#00b050]"
+          className="text-[#00b050]"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -47,7 +47,7 @@ const FAQAccordionItem: React.FC<FAQItemProps> = ({ question, answer }) => {
             transition={{ duration: 0.3 }}
             className="overflow-hidden"
           >
-            <div className="pb-4 text-gray-600 dark:text-gray-400">
+            <div className="pb-4 text-gray-400">
               {answer}
             </div>
           </motion.div>

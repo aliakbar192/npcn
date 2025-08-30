@@ -1,40 +1,32 @@
-// Services data for the RANA project - Internet connectivity services only
+// Services data for NPCN - Main services for home page
 
 export const services = [
   {
-    id: 'service1',
-    title: 'Residential Fiber Internet',
-    description: 'Experience lightning-fast browsing with our fiber optic internet packages for homes. Speeds up to 1 Gbps with unlimited data.',
-    icon: 'cloud'
+    id: 'high-speed-internet',
+    title: 'High-Speed Internet',
+    description: 'Lightning-fast fiber optic internet with unlimited data and speeds up to 500 Mbps for seamless streaming and gaming.',
+    icon: 'internet',
+    link: '/plans'
   },
   {
-    id: 'service2',
-    title: 'Business Internet',
-    description: 'Enterprise-grade connectivity solutions with dedicated bandwidth and 99.9% uptime guarantee for businesses of all sizes.',
-    icon: 'server'
+    id: 'customer-support',
+    title: '24/7 Customer Support',
+    description: 'Round-the-clock technical assistance and customer service when you need it most.',
+    icon: 'support',
+    link: '/support'
   },
   {
-    id: 'service3',
-    title: 'Home Office Solutions',
-    description: 'Specialized internet packages designed for remote workers with priority traffic for video conferencing and VPN connections.',
-    icon: 'package'
+    id: 'smart-home',
+    title: 'Smart Home Connectivity',
+    description: 'Connect and control all your smart home devices with our reliable internet solutions.',
+    icon: 'cloud',
+    link: '/services'
   },
   {
-    id: 'service4',
-    title: 'Enterprise Solutions',
-    description: 'Custom connectivity infrastructure for large businesses with dedicated support, static IPs, and network management.',
-    icon: 'settings'
-  },
-  {
-    id: 'service5',
-    title: 'Whole-Home Wi-Fi',
-    description: 'Complete home coverage with our advanced mesh network systems. No more dead zones or dropped connections.',
-    icon: 'smartphone'
-  },
-  {
-    id: 'service6',
-    title: '24/7 Technical Support',
-    description: 'Round-the-clock technical support and professional installation services to ensure your connection is always running smoothly.',
-    icon: 'shield'
+    id: 'business-solutions',
+    title: 'Business Solutions',
+    description: 'Tailored connectivity options for businesses of all sizes with dedicated support.',
+    icon: 'business',
+    link: '/plans'
   }
 ];

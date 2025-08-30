@@ -44,7 +44,7 @@ const Header = () => {
       <div 
         className={classNames(
           "transition-all duration-300 backdrop-blur-md", 
-          scrolled ? "bg-white/80 shadow-lg dark:bg-gray-900/90" : "bg-white dark:bg-gray-900"
+          scrolled ? "bg-gray-900/90 shadow-lg" : "bg-gray-900"
         )}
       >
         <div className="container-fluid px-4 sm:px-6 md:px-12 lg:px-20 py-4">
@@ -98,7 +98,7 @@ const Header = () => {
             {/* Desktop Navigation */}
             <div className="hidden md:flex space-x-1">
               {menuItems.map((item) => {
-                const isActive = pathname === item.path;
+                const isActive = item.path === '/' ? pathname === '/' : pathname.startsWith(item.path);
                 return (
                   <motion.div key={item.name} whileHover={{ y: -2 }} transition={{ duration: 0.2 }}>
                     <Link
@@ -107,7 +107,7 @@ const Header = () => {
                         "flex items-center px-4 py-2 rounded-full text-sm font-medium transition-all duration-200",
                         isActive 
                           ? "bg-gradient-to-r from-[#009245] to-[#00b050] text-white shadow-md" 
-                          : "text-[#333333] dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800"
+                          : "text-white hover:bg-gray-800/50 hover:text-gray-200"
                       )}
                     >
                       {item.icon}
@@ -116,18 +116,6 @@ const Header = () => {
                   </motion.div>
                 );
               })}
-              <motion.div 
-                className="ml-4"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <Link
-                  href="/get-started"
-                  className="flex items-center px-6 py-2 bg-gradient-to-r from-[#009245] to-[#00b050] text-white rounded-full text-sm font-medium shadow-md hover:shadow-lg transition-all duration-200"
-                >
-                  Get Started
-                </Link>
-              </motion.div>
             </div>
 
             {/* Mobile Navigation Button */}
@@ -168,7 +156,7 @@ const Header = () => {
               className="md:hidden overflow-hidden"
             >
               <motion.div 
-                className="bg-gradient-to-b from-white to-gray-50 dark:from-gray-900 dark:to-gray-800 shadow-lg rounded-b-2xl mx-4 mb-4 overflow-hidden"
+                className="bg-gray-900/95 backdrop-blur-lg shadow-lg rounded-b-2xl mx-4 mb-4 overflow-hidden border border-gray-700"
                 variants={{
                   hidden: { opacity: 0, y: -10 },
                   show: { opacity: 1, y: 0 }
@@ -176,9 +164,9 @@ const Header = () => {
                 initial="hidden"
                 animate="show"
               >
-                <div className="p-4 divide-y divide-gray-100 dark:divide-gray-800">
+                <div className="p-4 divide-y divide-gray-700">
                   {menuItems.map((item, index) => {
-                    const isActive = pathname === item.path;
+                    const isActive = item.path === '/' ? pathname === '/' : pathname.startsWith(item.path);
                     return (
                       <motion.div 
                         key={item.name}
@@ -192,7 +180,7 @@ const Header = () => {
                             "flex items-center py-3 px-4 rounded-xl my-1 transition-all duration-200",
                             isActive 
                               ? "bg-gradient-to-r from-[#009245] to-[#00b050] text-white" 
-                              : "text-[#333333] dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800"
+                              : "text-white hover:bg-gray-800/70"
                           )}
                           onClick={() => setMobileMenuOpen(false)}
                         >
@@ -200,7 +188,7 @@ const Header = () => {
                             "w-8 h-8 flex items-center justify-center rounded-full mr-3",
                             isActive 
                               ? "bg-white/20" 
-                              : "bg-gray-100 dark:bg-gray-700 text-[#009245] dark:text-[#00b050]"
+                              : "bg-gray-800 text-[#009245]"
                           )}>
                             {item.icon}
                           </div>
@@ -211,21 +199,7 @@ const Header = () => {
                   })}
                 </div>
                 
-                <div className="p-4 bg-gradient-to-r from-[#009245] to-[#00b050]">
-                  <motion.div
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
-                  >
-                    <Link 
-                      href="/get-started"
-                      className="flex items-center justify-center w-full px-4 py-3 bg-white rounded-xl text-[#009245] font-medium shadow-md hover:shadow-lg transition-all duration-200"
-                      onClick={() => setMobileMenuOpen(false)}
-                    >
-                      Get Started
-                      <FiArrowRight className="ml-2" />
-                    </Link>
-                  </motion.div>
-                </div>
+                {/* Mobile Get Started Button Removed */}
               </motion.div>
             </motion.div>
           )}

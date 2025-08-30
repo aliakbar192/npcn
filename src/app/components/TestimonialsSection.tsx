@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import TestimonialCard from './TestimonialCard';
 import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
-import { testimonials } from '../../data/cableData';
+import { testimonials } from '../../data/homeData';
 
 const TestimonialsSection = () => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -26,7 +26,7 @@ const TestimonialsSection = () => {
   };
 
   return (
-    <section className="py-16 md:py-24 relative">
+    <section className="py-16 md:py-24 relative bg-gray-900 shadow-xl shadow-gray-900/60">
       {/* Background decorations */}
       <div className="absolute top-0 left-0 w-72 h-72 bg-[#009245]/5 rounded-full -translate-x-1/2 -translate-y-1/2" />
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#333333]/5 rounded-full translate-x-1/3 translate-y-1/3" />
@@ -39,10 +39,10 @@ const TestimonialsSection = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
             What Our Customers Say
           </h2>
-          <p className="text-xl text-gray-600 dark:text-gray-400">
+          <p className="text-xl text-gray-300">
             Don't just take our word for it. Hear from the people who experience our service every day.
           </p>
         </motion.div>
@@ -70,7 +70,7 @@ const TestimonialsSection = () => {
             <div className="flex justify-center gap-4 mb-6">
               <motion.button
                 onClick={handlePrev}
-                className="bg-white/80 dark:bg-gray-800/80 hover:bg-[#009245] hover:text-white dark:hover:bg-[#009245] text-gray-700 dark:text-gray-200 p-3 rounded-full shadow-lg"
+                className="bg-gray-700 hover:bg-[#009245] hover:text-white text-gray-200 p-3 rounded-full shadow-lg border border-gray-600 hover:border-[#009245] transition-all duration-300"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -79,7 +79,7 @@ const TestimonialsSection = () => {
               
               <motion.button
                 onClick={handleNext}
-                className="bg-white/80 dark:bg-gray-800/80 hover:bg-[#009245] hover:text-white dark:hover:bg-[#009245] text-gray-700 dark:text-gray-200 p-3 rounded-full shadow-lg"
+                className="bg-gray-700 hover:bg-[#009245] hover:text-white text-gray-200 p-3 rounded-full shadow-lg border border-gray-600 hover:border-[#009245] transition-all duration-300"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -96,7 +96,7 @@ const TestimonialsSection = () => {
                   className={`w-2.5 h-2.5 rounded-full transition-all ${
                     index === activeIndex
                       ? 'bg-[#009245] w-8'
-                      : 'bg-gray-300 dark:bg-gray-700'
+                      : 'bg-gray-600'
                   }`}
                   aria-label={`Go to testimonial ${index + 1}`}
                 />

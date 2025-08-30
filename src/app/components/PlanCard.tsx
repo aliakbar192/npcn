@@ -2,10 +2,10 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { plans } from '../../data/siteData';
+import { homePlans } from '../../data/plansData';
 
 interface PlanCardProps {
-  plan: typeof plans[0];
+  plan: typeof homePlans[0];
 }
 
 const PlanCard: React.FC<PlanCardProps> = ({ plan }) => {
@@ -27,8 +27,8 @@ const PlanCard: React.FC<PlanCardProps> = ({ plan }) => {
         <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">{plan.name}</h3>
         
         <div className="mt-4 mb-6">
-          <span className="text-4xl font-bold text-gray-900 dark:text-white">${plan.price}</span>
-          <span className="text-gray-500 dark:text-gray-400">/{plan.billingPeriod}</span>
+          <span className="text-4xl font-bold text-gray-900 dark:text-white">₨{plan.price}</span>
+          <span className="text-gray-500 dark:text-gray-400">/month</span>
         </div>
         
         <ul className="space-y-3 mb-6">

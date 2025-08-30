@@ -33,7 +33,7 @@ const Footer = () => {
                 />
               </h6>
               <p className="text-gray-600 dark:text-gray-300 mb-4 max-w-xs">
-                Connecting the world with reliable internet and cable solutions since 2015.
+                New Pakistan Cable Network (NPCN) - Connecting you with reliable internet and cable solutions.
               </p>
 
               {/* Social Media Icons */}
@@ -91,15 +91,15 @@ const Footer = () => {
               <ul className="space-y-2 text-gray-600 dark:text-gray-300">
                 <li className="flex items-start space-x-2">
                   <span>📍</span>
-                  <span>123 Business Avenue, City, Country</span>
+                  <span>P-442, Shop No. 2, F-Block, Allama Iqbal Colony, Faisalabad</span>
                 </li>
                 <li className="flex items-start space-x-2">
                   <span>📞</span>
-                  <span>+1 (555) 123-4567</span>
+                  <span>0300-0999050</span>
                 </li>
                 <li className="flex items-start space-x-2">
                   <span>✉️</span>
-                  <span>info@npcn.com</span>
+                  <span>npcn.org.pk@gmail.com</span>
                 </li>
               </ul>
             </motion.div>
@@ -109,7 +109,7 @@ const Footer = () => {
         {/* Copyright Section */}
         <div className="mt-12 pt-6 border-t border-gray-200 dark:border-gray-700">
           <p className="text-center text-gray-600 dark:text-gray-400 text-sm">
-            © {currentYear} NPCN. All rights reserved.
+            © {currentYear} New Pakistan Cable Network (NPCN). All rights reserved.
           </p>
         </div>
       </div>

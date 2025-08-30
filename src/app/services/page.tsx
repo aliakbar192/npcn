@@ -200,10 +200,15 @@ export default function ServicesPage() {
         </section>
         
         {/* Internet Speed Comparison */}
-        <section className="py-20 bg-gray-900 border-t border-gray-800">
+        <section className="py-20 bg-gray-900 shadow-2xl shadow-gray-900/50">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto">
               <div className="text-center mb-16">
+                <div className="inline-block p-3 rounded-full bg-gradient-to-br from-green-500/20 to-green-600/20 mb-6">
+                  <svg className="w-8 h-8 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                  </svg>
+                </div>
                 <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">Experience Next-Level Internet</h2>
                 <p className="text-xl text-gray-400">
                   Our high-speed internet packages are designed for today's digital lifestyle, whether you're streaming, gaming, or working from home.
@@ -301,10 +306,16 @@ export default function ServicesPage() {
         </section>
         
         {/* Coverage Map Section */}
-        <section className="py-20 bg-gray-900">
+        <section className="py-20 bg-gray-900 shadow-2xl shadow-gray-900/50">
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div>
+                <div className="inline-block p-3 rounded-full bg-gradient-to-br from-green-500/20 to-emerald-500/20 mb-6">
+                  <svg className="w-8 h-8 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                  </svg>
+                </div>
                 <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">Service Coverage Area</h2>
                 <p className="text-xl text-gray-400 mb-8">
                   We're continuously expanding our network to bring high-speed internet and premium cable services to more communities.

@@ -1,8 +1,7 @@
 'use client';
 
-import React, { useRef } from 'react';
-import { motion, useInView } from 'framer-motion';
-import ClientOnly from './ClientOnly';
+import React, { useEffect, useState } from 'react';
+import { motion } from 'framer-motion';
 
 interface FadeInSectionProps {
   children: React.ReactNode;
@@ -17,8 +16,11 @@ const FadeInSection: React.FC<FadeInSectionProps> = ({
   direction = 'up',
   className = '' 
 }) => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, amount: 0.3 });
+  const [hasMounted, setHasMounted] = useState(false);
+  
+  useEffect(() => {
+    setHasMounted(true);
+  }, []);
   
   // Set initial position based on direction
   let initialX = 0;
@@ -29,21 +31,20 @@ const FadeInSection: React.FC<FadeInSectionProps> = ({
   if (direction === 'left') initialX = 40;
   if (direction === 'right') initialX = -40;
 
+  // Show content immediately before animation when component mounts
+  if (!hasMounted) {
+    return <div className={className}>{children}</div>;
+  }
+
   return (
-    <ClientOnly>
-      <motion.div
-        ref={ref}
-        initial={{ opacity: 0, x: initialX, y: initialY }}
-        animate={
-          isInView 
-            ? { opacity: 1, x: 0, y: 0, transition: { duration: 0.6, delay } } 
-            : { opacity: 0, x: initialX, y: initialY }
-        }
-        className={className}
-      >
-        {children}
-      </motion.div>
-    </ClientOnly>
+    <motion.div
+      initial={{ opacity: 0, x: initialX, y: initialY }}
+      animate={{ opacity: 1, x: 0, y: 0 }}
+      transition={{ duration: 0.6, delay }}
+      className={className}
+    >
+      {children}
+    </motion.div>
   );
 };
 

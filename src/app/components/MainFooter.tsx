@@ -71,21 +71,21 @@ const MainFooter = () => {
             </div>
             
             <p className="text-white/70 mb-6 max-w-sm">
-              NPCN provides high-speed internet solutions to homes and businesses. We're committed to connecting you to the digital world with reliability and excellence.
+              New Pakistan Cable Network (NPCN) provides high-speed internet solutions to homes and businesses. We're committed to connecting you to the digital world with reliability and excellence.
             </p>
             
             <div className="space-y-3">
               <div className="flex items-center">
                 <FiPhone className="text-[#009245] mr-3" />
-                <span className="text-white/80">1-800-NPCN-CONNECT</span>
+                <span className="text-white/80">0300-0999050</span>
               </div>
               <div className="flex items-center">
                 <FiMail className="text-[#009245] mr-3" />
-                <span className="text-white/80">support@npcn.com</span>
+                <span className="text-white/80">npcn.org.pk@gmail.com</span>
               </div>
               <div className="flex items-start">
                 <FiMapPin className="text-[#009245] mr-3 mt-1" />
-                <span className="text-white/80">123 Digital Avenue<br />Tech City, TC 10101</span>
+                <span className="text-white/80">P-442, Shop No. 2, F-Block,<br />Allama Iqbal Colony, Faisalabad</span>
               </div>
             </div>
           </div>
@@ -111,7 +111,7 @@ const MainFooter = () => {
         
         <div className="mt-12 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center">
           <div className="text-white/60 text-sm mb-4 md:mb-0">
-            © {new Date().getFullYear()} NPCN - Connecting World. All rights reserved.
+            © {new Date().getFullYear()} New Pakistan Cable Network (NPCN). All rights reserved.
           </div>
           
           <div className="flex space-x-4">
