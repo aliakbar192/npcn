@@ -273,7 +273,7 @@ const Hero = () => {
               >
                 <div className="absolute -inset-0.5 bg-gradient-to-r from-[#009245] to-[#00b050] rounded-full blur opacity-30 group-hover:opacity-80 transition duration-1000 group-hover:duration-200"></div>
                 <Link 
-                  href="/packages"
+                  href="/plans"
                   className="relative flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-[#009245] to-[#00b050] hover:from-[#00b050] hover:to-[#009245] text-white text-lg font-medium rounded-full shadow-lg transition-all duration-200"
                 >
                   View Packages

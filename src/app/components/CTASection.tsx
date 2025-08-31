@@ -73,7 +73,7 @@ const CTASection = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.4 }}
           >
-            <Link href="/get-started">
+            <Link href="/contact">
               <motion.button
                 className="px-8 py-4 bg-white hover:bg-gray-100 text-[#009245] font-bold text-lg rounded-full shadow-lg transition-all duration-300"
                 whileHover={{ 

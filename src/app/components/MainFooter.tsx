@@ -11,9 +11,10 @@ const MainFooter = () => {
     {
       title: 'Services',
       links: [
-        { name: 'Internet', href: '/services/internet' },
-        { name: 'Packages', href: '/plans' },
-        { name: 'Business Solutions', href: '/business' }
+        { name: 'Internet Plans', href: '/plans' },
+        { name: 'Business Solutions', href: '/plans' },
+        { name: 'Coverage Areas', href: '/coverage' },
+        { name: 'All Services', href: '/services' }
       ]
     },
     {
@@ -21,26 +22,26 @@ const MainFooter = () => {
       links: [
         { name: 'Help Center', href: '/support' },
         { name: 'Contact Us', href: '/contact' },
-        { name: 'FAQs', href: '/faqs' },
-        { name: 'Service Status', href: '/status' }
+        { name: 'FAQs', href: '/support' },
+        { name: 'Check Coverage', href: '/coverage' }
       ]
     },
     {
       title: 'Company',
       links: [
         { name: 'About Us', href: '/about' },
-        { name: 'Careers', href: '/careers' },
-        { name: 'News', href: '/news' },
-        { name: 'Privacy Policy', href: '/privacy' }
+        { name: 'Our Services', href: '/services' },
+        { name: 'Service Areas', href: '/coverage' },
+        { name: 'Contact', href: '/contact' }
       ]
     }
   ];
   
   const socialLinks = [
-    { icon: <FiFacebook />, href: 'https://facebook.com' },
-    { icon: <FiTwitter />, href: 'https://twitter.com' },
-    { icon: <FiInstagram />, href: 'https://instagram.com' },
-    { icon: <FiLinkedin />, href: 'https://linkedin.com' }
+    { icon: <FiFacebook />, href: 'https://facebook.com/npcnfaisalabad' },
+    { icon: <FiTwitter />, href: 'https://twitter.com/npcnfaisalabad' },
+    { icon: <FiInstagram />, href: 'https://instagram.com/npcnfaisalabad' },
+    { icon: <FiLinkedin />, href: 'https://linkedin.com/company/npcnfaisalabad' }
   ];
 
   return (

@@ -120,7 +120,7 @@ export default function SupportPage() {
                     
                     <div className="mt-6">
                       <Link
-                        href={`/support/${category.id}`}
+                        href="/support"
                         className="inline-flex items-center text-[#00b050] font-medium hover:underline"
                       >
                         View all {category.title.toLowerCase()} topics
@@ -145,7 +145,7 @@ export default function SupportPage() {
                 
                 <div className="mt-8 text-center">
                   <Link
-                    href="/faqs"
+                    href="/support"
                     className="inline-flex items-center text-[#00b050] font-medium hover:underline"
                   >
                     View all FAQs
@@ -176,7 +176,7 @@ export default function SupportPage() {
                       Contact Support
                     </Link>
                     <Link 
-                      href="tel:+18888888888" 
+                      href="tel:0300-0999050" 
                       className="inline-flex items-center justify-center px-6 py-3 border-2 border-white text-white hover:bg-white/10 font-medium rounded-lg transition-all duration-200"
                     >
                       Call Now

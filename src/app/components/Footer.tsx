@@ -64,7 +64,7 @@ const Footer = () => {
                 Quick Links
               </h6>
               <ul className="space-y-2">
-                {['Home', 'Plans', 'Services', 'Coverage'].map((item) => (
+                {['Home', 'About', 'Services', 'Plans', 'Coverage', 'Support', 'Contact'].map((item) => (
                   <li key={item}>
                     <Link
                       href={`/${item.toLowerCase() === 'home' ? '' : item.toLowerCase()}`}

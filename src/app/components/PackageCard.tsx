@@ -104,7 +104,7 @@ const PackageCard: React.FC<PackageCardProps> = ({
           </div>
           
           <div className="mt-auto">
-            <Link href="/signup">
+            <Link href="/contact">
               <motion.button 
                 className={`
                   w-full py-3 px-6 rounded-lg font-medium text-white transition-all duration-300
